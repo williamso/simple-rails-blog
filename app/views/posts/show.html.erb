@@ -1,4 +1,7 @@
-<p id="notice"><%= notice %></p>
+<% if notice.present? %>
+	<meta HTTP-EQUIV="REFRESH" content="4; url=<%= posts_path %>">
+	<p id="notice"><%= notice %></p>
+<% end %>
 
 <p>
   <b>Name:</b>
