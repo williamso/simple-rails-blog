@@ -12,15 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label "Namn" %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :body %><br />
+    <%= f.label "Titel" %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
     <%= f.text_area :body %>
   </div>
   <div class="field">
-    <%= f.label :rating %><br />
+    <%= f.label "Betyg" %><br />
     <%= f.number_field :rating %>
   </div>
   <div class="actions">

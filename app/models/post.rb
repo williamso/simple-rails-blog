@@ -1,5 +1,8 @@
 class Post < ActiveRecord::Base
-  attr_accessible :body, :name, :rating
+  attr_accessible :body, :name, :rating, :title
+  
+  validates :title, :length => { :minimum => 2 }
+  validates :title, :length => { :maximum => 50 }
   
   validates :name, :length => { :minimum => 2 }
   validates :name, :length => { :maximum => 50 }

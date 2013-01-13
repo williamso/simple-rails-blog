@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(:version => 20130112161630) do
 
   create_table "posts", :force => true do |t|
+    t.string   "title"
     t.string   "name"
     t.text     "body"
     t.integer  "rating"
