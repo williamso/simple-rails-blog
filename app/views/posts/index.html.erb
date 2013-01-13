@@ -1,0 +1,18 @@
+<section class="posts">
+	<% @posts.each do |post| %>
+	  <article class="post">
+	  	<div class="titel-och-text">
+		    <h3><%= post.name %></h3>
+		    <p><%= post.body %></p>
+		</div>
+		<p>Betyg: <%= post.rating %></p>
+		<p><%= link_to 'Visa', post %> | 
+			<%= link_to 'Redigera', edit_post_path(post) %> | 
+			<%= link_to 'Ta bort', post, method: :delete, data: { confirm: 'Vill du verkligen detta?' } %>
+		</p>
+	  </article>
+	  <br />
+	<% end %>
+</section>
+<br />
+<%= render 'form' %>
