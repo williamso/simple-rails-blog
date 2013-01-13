@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_filter :authenticate, :except => [:index, :show]
   # GET /posts
   # GET /posts.json
   def index
@@ -80,6 +81,15 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to posts_url }
       format.json { head :no_content }
+    end
+  end
+  
+  private
+  
+  def authenticate
+    authenticate_or_request_with_http_basic do |admin_name, password|
+      (admin_name == 'root' && password == 'pass') ||
+      (admin_name == 'rt' && password == 'ps')
     end
   end
 end
