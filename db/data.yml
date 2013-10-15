@@ -1,0 +1,48 @@
+
+---
+posts:
+  columns:
+  - id
+  - title
+  - name
+  - body
+  - rating
+  - created_at
+  - updated_at
+  records: 
+  - - 3
+    - Consultor Desenvolvimento Humano Organizacional
+    - Jobs
+    - "BRASILKIRIN - Alagoinhas, BA\r\nResponsável por assegurar a implantação e manutenção
+      das práticas, políticas e procedimentos da área de DHO, por garantir a implementação
+      e acompanhamento dos..."
+    - 1
+    - '2013-10-14 16:19:36.091861'
+    - '2013-10-14 16:28:15.310350'
+  - - 4
+    - Consultor(a) Contábil
+    - Jobs
+    - "TOTVS SC - Joinville, SC -\r\nEmpresa que atua no ramo de Informática - Tecnologia
+      da Informação contrata Consultor(a) Contábil, para trabalhar em Joinville/SC,
+      salário:...."
+    - 1
+    - '2013-10-14 16:21:04.607218'
+    - '2013-10-14 16:21:04.607218'
+  - - 5
+    - Consultor(a) em Logística
+    - Jobs
+    - "TOTVS SC - Joinville, SC\r\nEmpresa que atua no ramo de Informática - Tecnologia
+      da Informação contrata Consultor(a) em Logística, para trabalhar em Joinville/SC,
+      salário:...."
+    - 1
+    - '2013-10-14 16:22:08.041014'
+    - '2013-10-14 16:22:08.041014'
+  - - 6
+    - Consultor De Vinhos Sommelier
+    - Jobs
+    - "Rbr Brasil Recrutamento Selecao Ltda - São Paulo, SP\r\nGerir atividades necessárias
+      para a manutenção e promoção, organização de vinhos, acompanhamento de condições
+      da adega...."
+    - 1
+    - '2013-10-14 16:24:54.672583'
+    - '2013-10-14 16:24:54.672583'
