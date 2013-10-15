@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Första bloggen</title>
+  <title>First blog</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "font-awesome.min" %>
+  <%= stylesheet_link_tag    "bootstrap" %>
+  <%= stylesheet_link_tag    "style" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
@@ -11,7 +14,16 @@
 
 <%= yield %>
 
-<footer><p>Tack för att du läste bloggen</p></footer>
+<footer>
+	
+<% content_for :js do%>
+	var switchTo5x=true;
+<% end %>
+<%= javascript_include_tag "http://w.sharethis.com/button/buttons.js" %>
+<% content_for :js do%>
+	stLight.options({publisher: "2f7cb2db-1fd0-4dde-9e13-c4c375b4da8b", doNotHash: false, doNotCopy: false, hashAddressBar: false});
+<% end %>
+</footer>
 
 </body>
 </html>

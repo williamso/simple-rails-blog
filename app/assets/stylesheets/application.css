@@ -11,16 +11,157 @@
  *= require_self
  *= require_tree .
  */
-body{
-	padding: 0px 0px 0px 10px;
+
+
+@font-face{
+	font-family: ProximaNova!;
+	src: url(ProximaNova-Regular.otf)!;
 }
 
-.titel-och-text {
-	border: 1px solid;
-	background-color: #FFFF77;
-	padding: 5px 5px 5px 20px;
-	margin: 0px 0px 0px 0px;
+body{
+	padding: 0px 0px 0px 10px;
+	font-family:ProximaNova!;
 }
+
+.cover {
+	position: fixed;
+	z-index: 100;
+	color: #fff;
+	top: 0;
+	left: 0;
+	width: 30%;
+	height: 100%;
+	max-width: 500px;
+	display: block;
+	background-image: url('bg-cover.jpg');
+	background-repeat: no-repeat;
+	background-size: 500px;
+}
+
+.cover-body{
+	position: absolute;
+	bottom: 0;
+	padding: 50px 10% 10%;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.cover-body-title{
+
+	text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+}
+
+.cover-body-text{
+	font-size: 18px;
+	text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+}
+
+.cover-actions {
+	padding-top: 20px;
+	margin-top: 20px;
+	border-top: 1px solid rgba(255,255,255,0.3);
+}
+
 .post{
-	
+	display: block;
+	position: relative;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #f2f2f0;
+	word-wrap: break-word;
+	-webkit-transition: opacity .5s linear;
+	-moz-transition: opacity .5s linear;
+	-ms-transition: opacity .5s linear;
+	-o-transition: opacity .5s linear;
+	transition: opacity .5s linear;
 }
+.posts {
+	outline: 0;
+	position: absolute;
+	left: 30%;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: #fff;
+	-webkit-overflow-scrolling: touch;
+}
+
+.description {
+	color: #17a4bd;
+	font-size: 18px;
+}
+
+.secundary {
+	color: #ccc;
+	font-size: 18px;
+}
+
+.post-title{
+	font-size: 32px;
+	padding-bottom: 6px;
+	line-height: 1.1;
+}
+
+.posts-inner{
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	max-width: 810px;
+	padding: 50px 85px;
+}
+
+.post-item-avatar {
+	float: right;
+	width: 50px;
+	height: 50px;
+	margin-left: 20px;
+	overflow: hidden;
+	background-color: #f2f2f0;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	border-radius: 100%;
+	margin-top: 20px;
+}
+
+.post-item-avatar > span{
+	text-align: center;
+	font-size: 32px;
+	margin-top: 5px;
+	font-weight: bold;
+	color: #5191d1;
+	display: block;
+}
+p.lead {
+	font-size: 38px;
+	line-height: 50px;
+}
+
+p.links{
+	display: block;
+	position: absolute;
+	right: 0px
+}
+
+.icon{
+	font-size: 2em;
+	margin-left: 3px;
+}
+
+.icon-menu{
+	position: fixed;
+	right: 20px;
+	z-index: 999;
+	top: 30px;
+}
+
+.header{
+	z-index: 999;
+	position: fixed;
+	left: 470px;
+	top: 20px;
+	width: 100%;
+}
+
