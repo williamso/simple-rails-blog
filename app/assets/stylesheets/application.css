@@ -12,17 +12,6 @@
  *= require_tree .
  */
 
-
-@font-face{
-	font-family: ProximaNova!;
-	src: url(ProximaNova-Regular.otf)!;
-}
-
-body{
-	padding: 0px 0px 0px 10px;
-	font-family:ProximaNova!;
-}
-
 .cover {
 	position: fixed;
 	z-index: 100;

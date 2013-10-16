@@ -1,5 +1,25 @@
-<h1>New post</h1>
 
-<%= render 'form' %>
+<header class="header">
+    <h2> Nova Oportunidade</h2>
+ 	<!-- MENU -->
+	<div class="icon-menu">
+		<ul>
+			<li class="icon-home icon"></li>
+			<li class="icon-rss icon"></li>
+			<li class="icon-twitter icon"></li>
+			<li class="icon-linkedin icon"></li>
+		</ul>
+	</div>	
+</header>
+
+
+<%= render 'cover' %>
+
+<section id="posts" class="posts">
+	<div id="posts-inner" class="posts-inner">
+		<br><br><br><br>
+		<%= render 'form' %>
+	</div>
+</section>
 
 <%= link_to 'Back', posts_path %>

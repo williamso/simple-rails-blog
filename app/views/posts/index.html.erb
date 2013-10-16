@@ -2,71 +2,26 @@
 	<h3>Make a first post!</h3>
 <% end %>
 
-<header class="header">
+<%= render "header"%>
 
-	<ul class="nav navbar-nav hidden-xs">
-      	<!--<li>
-	      	<div class="m-t-small">
-	      		<a class="btn btn-lg btn-info" data-toggle="modal" href="#modal">
-	      			<i class="icon-plus"></i>Nova Oportunidade</a>
-	      	</div>
-      	</li>-->
-      	<li class="dropdown shift" data-toggle="shift:appendTo" data-target=".nav-primary .nav"></li>
-    </ul>
-    
-    <form class="navbar-form pull-left shift" action="" data-toggle="shift:appendTo" data-target=".nav-primary">
-      <i class="icon-search text-muted"></i>
-      <input type="text" class="input-sm form-control" placeholder="Buscar">
-    </form>
+<!-- COVER -->
+<%= render "cover"%>
 
-	<div class="icon-menu">
-		<ul>
-			<li class="icon-home icon"></li>
-			<li class="icon-rss icon"></li>
-			<li class="icon-twitter icon"></li>
-			<li class="icon-linkedin icon"></li>
-		</ul>
-	</div>	
-</header>
-
-<aside class="cover">
-	<div></div>
-	<div class="cover-body">
-		<div>
-			<h1 class="cover-body-title">HunterCo</h1>
-			<p class="cover-body-text">Nós oferecemos um canal para que Empresas possam publicar suas oportunidades para consultores. E Consultores possam  estar candidatando-se a essas oportunidades.</p>
-		</div>
-		<div class="cover-actions">
-	      		<a class="btn btn-lg btn-info" data-toggle="modal" href="#modal">
-	      			<i class="icon-plus"></i>Nova Oportunidade</a>
-		</div>
-	</div>
-</aside>
-
-<section class="posts">
-	<div class="posts-inner">
+<!-- POSTS -->
+<section id="posts" class="posts">
+	<div id="posts-inner" class="posts-inner">
 	
-		<% @posts.each do |post| %>
-	  	<article class="post">
-	  		<div class="post-item-avatar"><span>H</span></div>
-	  		<h2 class="post-title"><%= post.title %></h2>
-		    <p class="description"><%= post.body %></p>
-			<p class="secundary"><!--Rating: <%= post.rating %> | --> <i>Publicado por: William de Olivera - 14/10/2013 às 17:30</i></p>
-			<p>
-				<a class="btn btn-sm btn-primary" data-toggle="modal" href="#modal">
-	      			<i class="icon-screenshot"></i>Quero saber mais!</a>
-	      		<span class='st_sharethis' displayText='Compartilhe!'></span>
-				
-	      	</p>
-			<!--<p class="secundary">
-				<%= link_to 'View', post %> | 
-				<%= link_to 'Edit', edit_post_path(post) %> | 
-				<%= link_to 'Delete', post, method: :delete, data: { confirm: 'Do you really want this?' } %>
-			</p>-->
-	  	</article>
-		<% end %>
+		<%= render @posts%>
 	
 	</div>
 </section>
 
-<!-- <%= render 'form' %> -->
+<% content_for :js do%>
+	var switchTo5x=true;
+<% end %>
+<%= javascript_include_tag "http://w.sharethis.com/button/buttons.js" %>
+<% content_for :js do%>
+	stLight.options({publisher: "2f7cb2db-1fd0-4dde-9e13-c4c375b4da8b", doNotHash: false, doNotCopy: false, hashAddressBar: false});
+<% end %>
+
+<%= paginate @posts %>

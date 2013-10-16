@@ -3,7 +3,8 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.order(:created_at).page(params[:page])
+    #@posts = Post.all
     @post = Post.new
     #@post = Post.find(params[:id])
 
