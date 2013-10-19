@@ -36,7 +36,7 @@ audio:not([controls]) {
   display: none;
 }
 html {
-  font-family: ProximaNova, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
@@ -187,7 +187,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: ProximaNova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', ProximaNova, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
   color: #333333;
@@ -394,7 +394,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: ProximaNova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: FreigSanPro, 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
   line-height: 1.1;
 }

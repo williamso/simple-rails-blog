@@ -1,8 +1,10 @@
 html{position: relative;min-height: 100%;overflow-x:hidden;}
 body{background-color: transparent;color:#656565;font-size:13px;overflow-x: hidden;}
-body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: ProximaNova, 'Open Sans',"HelveticaNeue", "Helvetica Neue", Helvetica, Arial,sans-serif;
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: FreigSanPro, 'Open Sans',"HelveticaNeue", "Helvetica Neue", Helvetica, Arial,sans-serif;
+  color: #000;
 }
+
 a{color:#3a5a7a}
 a:hover, a:focus{text-decoration:none;}
 
@@ -167,8 +169,8 @@ a.list-group-item.active > .badge, .nav-pills > .active > a > .badge{color: #3a5
   position: relative;
   border-width: 0;
   box-shadow:inset 0 -2px 0 rgba(0,0,0,0.15);
-  font-weight: 600;
   padding: 7px 12px;
+  text-rendering: optimizeLegibility;
   transition:background .3s ease-in-out 0s;
 }
 .btn:hover, .btn:focus, .btn:active, .btn.active {background: #bac3cc;}
@@ -196,8 +198,8 @@ fieldset[disabled] .btn.active {
 .btn-default{padding:6px 12px;box-shadow:inset 0 -2px 0 rgba(0,0,0,0.05);border-width:1px;border-color:#c3c6c9;color:#657483;background-color:#f5f6f7}
 .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active{border-color:#c3c6c9;color:#657483;background-color:#fafbfc;}
 
-.btn-primary, .bg-primary, .btn-primary.btn-circle > i{color:#fff;background-color:#13c4a5}
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .btn-primary.btn-circle:hover > i, .btn.btn-circle:hover > i{color:#fff; background-color:#23d4b5;}
+.btn-primary, .bg-primary, .btn-primary.btn-circle > i{color:#fff;background-color:#57ad68}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .btn-primary.btn-circle:hover > i, .btn.btn-circle:hover > i{color:#fff; background-color:#66c978;}
 
 .btn-success, .bg-success, .btn-success.btn-circle > i{color:#fff;background-color:#3fcf7f}
 .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .btn-success.btn-circle:hover > i{color:#fff;background-color:#4fdf8f;}

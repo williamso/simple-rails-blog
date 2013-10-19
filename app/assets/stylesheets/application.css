@@ -79,13 +79,12 @@
 }
 
 .description {
-	color: #17a4bd;
 	font-size: 18px;
 }
 
 .secundary {
 	color: #ccc;
-	font-size: 18px;
+	font-size: 16px;
 }
 
 .post-title{
@@ -157,4 +156,6 @@ p.links{
 	padding-left: 80px;
 }
 
-
+.header h2{
+	margin-left: 170px;
+}

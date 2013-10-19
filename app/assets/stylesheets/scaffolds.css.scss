@@ -1,18 +1,18 @@
 @font-face{
-  font-family: ProximaNova;
-  src: url(ProximaNova-Regular.otf);
+  font-family: FreigSanPro;
+  src: url(font/FreigSanProBold.otf);
 }
 
 body {
   background-color: #fff;
   color: #333;
-  font-family: ProximaNova, verdana, arial, helvetica, sans-serif;
+  font-family: 'Open Sans', verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
 
 p, ol, ul, td {
-  font-family: ProximaNova, verdana, arial, helvetica, sans-serif;
+  font-family: 'Open Sans', verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
