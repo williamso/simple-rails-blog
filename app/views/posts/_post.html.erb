@@ -1,17 +1,22 @@
+<% unless defined?(post) %>
+	<% post = @post %>
+	<% puts "***************************************************************************" %>
+<% end %>
+
 <article class="post">
 	<div class="post-item-avatar"><span>H</span></div>
 	<h2 class="post-title"><%= post.title %></h2>
 	<p class="description"><%= post.body %></p>
 	<p class="secundary"><i>Publicado por: William de Olivera - 14/10/2013 às 17:30</i></p>
 	<p>
-		<a class="btn btn-sm btn-primary" data-toggle="modal" href="#modal">
-			<i class="icon-screenshot"></i>Quero saber mais!</a>
+		<%= link_to "<i class='icon-screenshot'show></i>Quero saber mais!".html_safe ,post, class: "btn btn-sm btn-primary" %>
+
 		<span class='st_sharethis' displayText='Compartilhe!'></span>
 	
 	</p>
-<!--<p class="secundary">
-	<%= link_to 'View', post %> | 
-	<%= link_to 'Edit', edit_post_path(post) %> | 
-	<%= link_to 'Delete', post, method: :delete, data: { confirm: 'Do you really want this?' } %>
-</p>-->
+	<p class="secundary">
+		<%= link_to 'View', post %> | 
+		<%= link_to 'Edit', edit_post_path(post) %> | 
+		<%= link_to 'Delete', post, method: :delete, data: { confirm: 'Do you really want this?' } %>
+	</p>
 </article>

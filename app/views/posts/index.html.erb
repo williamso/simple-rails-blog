@@ -2,7 +2,7 @@
 	<h3>Make a first post!</h3>
 <% end %>
 
-<%= render "header"%>
+<%= render partial: "header", locals: { search: true} %>
 
 <!-- COVER -->
 <%= render "cover"%>
@@ -11,7 +11,7 @@
 <section id="posts" class="posts">
 	<div id="posts-inner" class="posts-inner">
 	
-		<%= render @posts%>
+		<%= render @posts %>
 	
 	</div>
 </section>
