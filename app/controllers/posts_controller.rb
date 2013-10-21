@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.order("created_at DESC").page(params[:page])
+    @posts = Post.where("status = true").order("created_at DESC").page(params[:page])
     #@posts = Post.all
     @post = Post.new
     #@post = Post.find(params[:id])
@@ -48,6 +48,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
+        PostMailer.new_post(@post).deliver
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else

@@ -1,7 +1,4 @@
-<% if notice.present? %>
-	<meta HTTP-EQUIV="REFRESH" content="4; url=<%= posts_path %>">
-	<p id="notice"><%= notice %></p>
-<% end %>
+
 
 <%= render partial: "header", locals: { search: true} %>
 
@@ -10,14 +7,17 @@
 <section id="posts" class="posts">
 	<div id="posts-inner" class="posts-inner">
 		<br><br><br><br>
+		<% if notice.present? %>
+			<!--<p id="notice"><%= notice %></p>-->
+			<div class="bg-primary clearfix padder m-b">
+        		<h4 class="m-b" style="color: #fff; text-rendering: optimizeLegibility;">Sua oportunidade foi enviada para nosso Adminstrador, para aprovação. Em até 20 minutos ela estará no ar. </h3>
+        		<h4 class="m-b" style="color: #fff; text-rendering: optimizeLegibility;"> Para remover ou editar envie um e-mail para o Administrador (admin@hunterco.com.br), com o ID - <%=@post.id%> com a sua solicitação.</h4>
+        		 </div>
+		<% end %>
+     
 
-		<article class="post">
-			<div class="post-item-avatar"><span>H</span></div>
-			<h2 class="post-title"><%= @post.title %></h2>
-			<p class="description"><%= @post.body %></p>
-			<p class="secundary"><i>Publicado por: William de Olivera - 14/10/2013 às 17:30</i></p>
-			
-		</article>
+		<%= render @post %>
+
 	</div>
 </section>
 
