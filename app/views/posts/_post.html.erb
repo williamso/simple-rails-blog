@@ -1,22 +1,33 @@
 <% unless defined?(post) %>
 	<% post = @post %>
-	<% puts "***************************************************************************" %>
 <% end %>
 
 <article class="post">
 	<div class="post-item-avatar"><span>H</span></div>
-	<h2 class="post-title"><%= post.title %></h2>
-	<p class="description"><%= post.body %></p>
-	<p class="secundary"><i>Publicado por: <%=post.name %> - <%= post.created_at.to_s(:post) %> </i></p>
+	<h2 class="post-title"><%= link_to post.title, post %></h2>
+	<% case who_is %>
+		<% when 'edit'%>
+			<p class="description"><%= post.body %></p>
+		<% when 'show' %>
+			<p class="description"><%= post.body %></p>
+		<% when 'list' %>
+			<p class="description"><%= truncate post.body, length: 160 %> <%= link_to '<i>leia mais</i>'.html_safe , post %> </p>
+	<% end %>
+	<p class="secundary"><i>Publicado por: <%=link_to post.name, author_path(name: post.name) %> - <%= post.created_at.to_s(:post) %> </i></p>
 	<p>
-		<%= link_to "<i class='icon-screenshot'show></i>Candidatar-se!".html_safe ,post, class: "btn btn-sm btn-info" %>
-
-		<span class='st_sharethis' displayText='Compartilhe!'></span>
-	
+		<% case who_is %>
+			<% when 'edit'%>
+				<%= link_to "<i class='icon-plus'show></i>Nova Oportunidade".html_safe ,post, class: "btn btn-sm btn-primary" %>
+				<%= link_to "<i class='icon-home'show></i>Home".html_safe ,'/posts', class: "btn btn-sm btn-info" %>
+				<%= link_to "<i class='icon-edit'show></i>Editar".html_safe ,edit_post_path(post), class: "btn btn-sm" %>
+				<%= link_to "<i class='icon-remove'show></i>Excluir".html_safe , post, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn btn-sm" %>
+			<% when 'show' %>
+				<%= link_to "<i class='icon-screenshot'show></i>Candidatar-se!".html_safe ,post, class: "btn btn-sm btn-primary" %>
+				<%= link_to "<i class='icon-home'show></i>Home".html_safe ,'/posts', class: "btn btn-sm btn-info" %>
+				<span class='st_sharethis' displayText='Compartilhe!'></span>
+			<% when 'list' %>
+				<%= link_to "<i class='icon-screenshot'show></i>Candidatar-se!".html_safe ,post, class: "btn btn-sm btn-info" %>
+				<span class='st_sharethis' displayText='Compartilhe!'></span>
+		<% end %>	
 	</p>
-	<!-- <p class="secundary">
-		<%= link_to 'View', post %> | 
-		<%= link_to 'Edit', edit_post_path(post) %> | 
-		<%= link_to 'Delete', post, method: :delete, data: { confirm: 'Do you really want this?' } %>
-	</p>-->
 </article>

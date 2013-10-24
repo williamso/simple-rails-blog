@@ -1,6 +1,14 @@
-<h1>Editing post</h1>
 
-<%= render 'form' %>
+<%= render partial: "header", locals: { search: false, titulo: "Editando Oportunidade"} %>
 
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+<%= render 'cover' %>
+
+<section id="posts" class="posts">
+	<div id="posts-inner" class="posts-inner">
+		<br><br><br><br>
+		<%= render 'form' %>
+	</div>
+</section>
+
+<!--<%= link_to 'Show', @post %> |
+<%= link_to 'Back', posts_path %> -->

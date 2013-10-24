@@ -1,0 +1,24 @@
+
+<%= render partial: "header", locals: { search: true} %>
+
+<!-- COVER -->
+<%= render "cover"%>
+
+<!-- POSTS -->
+<section id="posts" class="posts">
+	<div id="posts-inner" class="posts-inner">
+	
+		<%= render partial: @posts, locals: {who_is: 'list'} %>
+	
+	</div>
+</section>
+
+<% content_for :js do%>
+	var switchTo5x=true;
+<% end %>
+<%= javascript_include_tag "http://w.sharethis.com/button/buttons.js" %>
+<% content_for :js do%>
+	stLight.options({publisher: "2f7cb2db-1fd0-4dde-9e13-c4c375b4da8b", doNotHash: false, doNotCopy: false, hashAddressBar: false});
+<% end %>
+
+<%= paginate @posts %>

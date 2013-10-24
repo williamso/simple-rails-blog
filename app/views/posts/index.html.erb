@@ -11,7 +11,7 @@
 <section id="posts" class="posts">
 	<div id="posts-inner" class="posts-inner">
 	
-		<%= render @posts %>
+		<%= render partial: @posts, locals: {who_is: 'list'} %>
 	
 	</div>
 </section>

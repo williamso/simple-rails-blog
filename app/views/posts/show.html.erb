@@ -1,7 +1,8 @@
-
-
-<%= render partial: "header", locals: { search: true} %>
-
+<% if notice.present? %>
+	<%= render partial: "header", locals: { search: false, titulo: "Veja como ficou a oportunidade!"} %>
+<% else %>
+	<%= render partial: "header", locals: { search: false, titulo: "A Oportunidade!"} %>
+<% end %>
 <%= render 'cover' %>
 
 <section id="posts" class="posts">
@@ -9,14 +10,17 @@
 		<br><br><br><br>
 		<% if notice.present? %>
 			<!--<p id="notice"><%= notice %></p>-->
-			<div class="bg-primary clearfix padder m-b">
+			<% who_is = 'edit'%>
+			<div class="alert alert-success">
         		<h4 class="m-b" style="color: #fff; text-rendering: optimizeLegibility;">Sua oportunidade foi enviada para nosso Adminstrador, para aprovação. Em até 20 minutos ela estará no ar. </h3>
-        		<h4 class="m-b" style="color: #fff; text-rendering: optimizeLegibility;"> Para remover ou editar envie um e-mail para o Administrador (admin@hunterco.com.br), com o ID - <%=@post.id%> com a sua solicitação.</h4>
-        		 </div>
+        		<h4 class="m-b" style="color: #fff; text-rendering: optimizeLegibility;"> Para remover ou editar posteriormente envie um e-mail para o Administrador (admin@hunterco.com.br), com o ID - <%=@post.id%> com a sua solicitação.</h4>
+        	</div>
+        <% else %>
+        	<% who_is = 'show'%>
 		<% end %>
      
 
-		<%= render @post %>
+		<%= render partial: @post, locals: {who_is: who_is} %>
 
 	</div>
 </section>

@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :authenticate, :except => [:index, :show]
+  before_filter :authenticate, :except => [:index, :show, :search]
   # GET /posts
   # GET /posts.json
   def index
@@ -86,6 +86,17 @@ class PostsController < ApplicationController
     end
   end
   
+  # GET /posts/search/name
+  # GET /posts/search/name.json
+  def search
+    @posts = Post.where("status = true and name = ?", params[:name]).order("created_at DESC").page(params[:page])
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @posts }
+    end
+  end
+
   private
   
   def authenticate

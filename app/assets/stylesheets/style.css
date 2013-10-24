@@ -5,6 +5,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #000;
 }
 
+h2 > a{color:#000}
+h2 > a:hover{color:#000}
+.secundary > i > a {color: #ccc !important;}
+.secundary > i > a:hover {text-decoration: underline;}
 a{color:#3a5a7a}
 a:hover, a:focus{text-decoration:none;}
 
