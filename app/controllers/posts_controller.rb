@@ -3,8 +3,16 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.where("status = true").order("created_at DESC").page(params[:page])
-    #@posts = Post.all
+    
+     if params[:search]
+      @posts = Post.search(params[:search]).order("created_at DESC").page(params[:page])
+      puts "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    else
+      @posts = Post.where("status = true").order("created_at DESC").page(params[:page])
+      puts "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+      #@posts = Post.all
+    end 
+
     @post = Post.new
     #@post = Post.find(params[:id])
 

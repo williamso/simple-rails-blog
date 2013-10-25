@@ -15,4 +15,9 @@ class Post < ActiveRecord::Base
   
   paginates_per 5
   
+  def self.search(query)
+    # where(:title, query) -> This would return an exact match of the query
+    where("status = true and title like ?", "%#{query}%") 
+  end
+  
 end
