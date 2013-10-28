@@ -53,6 +53,9 @@ Blog::Application.routes.draw do
   # just remember to delete public/index.html.
    root :to => 'posts#index'
    match 'posts/search/:name' => 'posts#search', :as => 'author'
+   match 'posts/apply/:id' => 'posts#apply', :as => 'candidatos'
+   match 'posts/apply/success/:id' => 'posts#success', :as => 'candidato'
+   
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

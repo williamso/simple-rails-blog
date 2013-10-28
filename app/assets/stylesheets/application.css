@@ -42,6 +42,14 @@
 	color: #fff;
 }
 
+.cover-body-title > a{
+	color: #fff;
+}
+
+.cover-body-title > a:hover{
+	color: #fff;
+}
+
 .cover-body-text{
 	font-size: 18px;
 	text-shadow: 0 1px 1px rgba(0,0,0,0.5);

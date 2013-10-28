@@ -41,3 +41,4 @@ gem 'jquery-rails'
 gem 'execjs'
 gem 'therubyracer'
 gem 'kaminari'
+gem "strong_parameters"

@@ -1,0 +1,67 @@
+<%= render partial: "header", locals: { search: false, titulo: "Candidate-se!"} %>
+
+<%= render 'cover' %>
+
+<section id="posts" class="posts">
+	<div id="posts-inner" class="posts-inner">
+		<br><br><br><br>
+     
+		<!-- ############# FORM ############################# -->
+
+		<%= form_for @candidato, html: {class: "form-horizontal"} do |f| %>
+			  <!-- Msg Erros --> 
+			  <% if @candidato.errors.any? %>
+			    <div class="alert alert-danger">
+			      <h4><%= pluralize(@candidato.errors.count, "error") %> prohibited this post from being saved:</h4>
+
+			      <ul>
+			      <% @candidato.errors.full_messages.each do |msg| %>
+			        <li><%= msg %></li>
+			      <% end %>
+			      </ul>
+			    </div>
+			  <% end %>
+
+			  <!-- Nome -->
+			  <div class="form-group">
+			    <%= f.label("Nome*", class: "col-lg-3 control-label") %>
+			    <div class="col-lg-8">
+			      <%= f.text_field(:name, placeholder: "ex.: Fulado da Silva", class: "form-control parsley-validated") %>
+			    </div>
+			  </div>
+			  <!-- E-mail -->
+			  <div class="form-group">
+			    <%= f.label("E-mail*", class: "col-lg-3 control-label") %>
+			    <div class="col-lg-8">
+			      <%= f.text_field(:email, placeholder: "ex.: fulano.silva@exemplo.com", class: "bg-focus form-control parsley-validated") %>
+			    </div>
+			  </div>
+			  <!-- Título -->
+			  <div class="form-group">
+			    <%= f.label("LinkedIn*", class: "col-lg-3 control-label") %>
+			    <div class="col-lg-8">
+			      <%= f.text_field(:urllinkedin, placeholder: "ex.: http://www.linkedin.com/in/seu-nome", class: "form-control parsley-validated") %>
+			    </div>
+			  </div>
+			  <%= f.hidden_field(:post_id, :value => params[:id]) %>
+			  <!-- Ações -->
+			  <div class="form-group">
+			    <div class="col-lg-9 col-lg-offset-3">
+			      <%= button_tag( :class => "btn btn-primary") do %>
+			         <i class='icon-plus'show></i>Enviar
+			      <% end %>
+			      <%= link_to "<i class='icon-home'show></i>Home".html_safe ,'/posts', class: "btn btn-info" %>
+			      <%= link_to "<i class='icon-remove'show></i>Cancelar".html_safe, posts_path ,class: "btn" %>
+			    </div>
+			  </div><div class="form-group">
+			    <div class="col-lg-9 col-lg-offset-3">
+			       <h5> * Campos de preenchimento obrigatório.</h5>
+			    </div>
+			  </div>
+
+			<% end %>
+
+		<!-- ######################################################################################################## -->
+
+	</div>
+</section>

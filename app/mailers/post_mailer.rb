@@ -6,4 +6,9 @@ class PostMailer < ActionMailer::Base
     @post = post
     mail(subject: "Nova oportunidade: #{@post.id} - #{@post.title}")
   end
+
+  def new_candidato(candidato)
+    @candidato = candidato
+    mail(subject: "Nova candidatura: #{@candidato.post_id} - #{@candidato.name}")
+  end
 end

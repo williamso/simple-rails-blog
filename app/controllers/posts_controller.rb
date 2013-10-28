@@ -1,15 +1,14 @@
 class PostsController < ApplicationController
-  before_filter :authenticate, :except => [:index, :show, :search]
+  #before_filter :authenticate, :except => [:index, :show, :search]
+  
   # GET /posts
   # GET /posts.json
   def index
     
      if params[:search]
       @posts = Post.search(params[:search]).order("created_at DESC").page(params[:page])
-      puts "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
     else
       @posts = Post.where("status = true").order("created_at DESC").page(params[:page])
-      puts "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
       #@posts = Post.all
     end 
 
@@ -52,7 +51,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(params[:post])
+    @post = Post.new(post_params)
 
     respond_to do |format|
       if @post.save
@@ -63,6 +62,15 @@ class PostsController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
+    end
+  end
+  
+  def success
+    @candidato = Candidato.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @candidato }
     end
   end
 
@@ -105,6 +113,27 @@ class PostsController < ApplicationController
     end
   end
 
+  # GET /posts/new
+  # GET /posts/new.json
+  def apply
+    if params[:candidato]
+      @candidato = Candidato.new(candidato_params)
+    else
+      @candidato = Candidato.new
+    end
+
+    respond_to do |format|
+      if @candidato.save
+        PostMailer.new_candidato(@candidato).deliver
+        format.html { redirect_to @candidato, notice: 'Você candidatou-se com sucesso!' }
+        format.json { render json: @candidato, status: :created, location: @candidato }
+      else
+        format.html { render action: "apply" }
+        format.json { render json: @candidato.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
   
   def authenticate
@@ -112,5 +141,13 @@ class PostsController < ApplicationController
       (admin_name == 'root' && password == 'pass') ||
       (admin_name == 'rt' && password == 'ps')
     end
+  end
+
+  def post_params
+    params.require(:post).permit(:title, :name, :email, :body)
+  end
+
+  def candidato_params
+    params.require(:candidato).permit(:post_id, :name, :email, :urllinkedin)
   end
 end

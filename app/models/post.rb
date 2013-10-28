@@ -1,5 +1,7 @@
 class Post < ActiveRecord::Base
-  attr_accessible :body, :name, :email, :title
+  include ActiveModel::ForbiddenAttributesProtection
+  
+  has_many :candidatos
   
   validates :title, :length => { :minimum => 2 }
   validates :title, :length => { :maximum => 50 }
