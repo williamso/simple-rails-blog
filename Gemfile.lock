@@ -58,6 +58,7 @@ GEM
     mime-types (1.19)
     multi_json (1.5.0)
     mysql2 (0.3.13)
+    pg (0.17.0)
     polyglot (0.3.3)
     rack (1.4.3)
     rack-cache (1.2)
@@ -122,6 +123,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   mysql2 (~> 0.3.13)
+  pg (~> 0.17.0)
   rails (= 3.2.11)
   sass-rails (~> 3.2.3)
   strong_parameters

@@ -6,7 +6,7 @@ gem 'rails', '3.2.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem "mysql2", "~> 0.3.13"
-
+gem "pg", "~> 0.17.0"
 gem 'yaml_db'
 
 # Gems used only for assets and not required
