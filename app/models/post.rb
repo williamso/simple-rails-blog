@@ -19,7 +19,8 @@ class Post < ActiveRecord::Base
   
   def self.search(query)
     # where(:title, query) -> This would return an exact match of the query
-    where("status = true and title like ?", "%#{query}%") 
+#    where("status = true and title like ?", "%#{query}%") 
+    where(" title like ?", "%#{query}%") 
   end
   
 end

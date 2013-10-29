@@ -5,12 +5,12 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     
-     if params[:search]
+     #if params[:search]
       @posts = Post.search(params[:search]).order("created_at DESC").page(params[:page])
-    else
-      @posts = Post.where("status = true").order("created_at DESC").page(params[:page])
+    #else
+      #@posts = Post.where("status = true").order("created_at DESC").page(params[:page])
       #@posts = Post.all
-    end 
+    #end 
 
     @post = Post.new
     #@post = Post.find(params[:id])
