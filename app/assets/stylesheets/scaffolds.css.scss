@@ -1,33 +1,12 @@
 @font-face{
   font-family: FreigSanPro;
-  src: url(font/FreigSanProBold.otf);
-}
-
-body {
-  background-color: #fff;
-  color: #333;
-  font-family: 'Open Sans', verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
-
-p, ol, ul, td {
-  font-family: 'Open Sans', verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  src: url(fonts/FreigSanProBold.otf);
 }
 
 pre {
   background-color: #eee;
   padding: 10px;
   font-size: 11px;
-}
-
-
-div {
-  &.field, &.actions {
-    margin-bottom: 10px;
-  }
 }
 
 #notice {

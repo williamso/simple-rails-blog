@@ -118,18 +118,23 @@ class PostsController < ApplicationController
   def apply
     if params[:candidato]
       @candidato = Candidato.new(candidato_params)
+
+      respond_to do |format|
+        if @candidato.save
+          PostMailer.new_candidato(@candidato).deliver
+          format.html { redirect_to @candidato, notice: 'Você candidatou-se com sucesso!' }
+          format.json { render json: @candidato, status: :created, location: @candidato }
+        else
+          format.html { render action: "apply" }
+          format.json { render json: @candidato.errors, status: :unprocessable_entity }
+        end
+      end
     else
       @candidato = Candidato.new
-    end
 
-    respond_to do |format|
-      if @candidato.save
-        PostMailer.new_candidato(@candidato).deliver
-        format.html { redirect_to @candidato, notice: 'Você candidatou-se com sucesso!' }
-        format.json { render json: @candidato, status: :created, location: @candidato }
-      else
-        format.html { render action: "apply" }
-        format.json { render json: @candidato.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        format.html # new.html.erb
+        format.json { render json: @candidato }
       end
     end
   end

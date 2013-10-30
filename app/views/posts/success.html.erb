@@ -7,13 +7,13 @@
 			<br><br><br><br>
 
 			<div class="alert alert-success">
-        		<h4>Parabéns! O dono da oportunidades estará recebendo as seus dados publicados!</h3>
+        		<h4>Parabéns! O responsável pela oportunidade receberá suas informações para avaliação.</h3>
         	</div>
         	<h2 class="post-title"><%= @candidato.name %></h2>
         	<p class="description"><%= @candidato.email %></p>
         	<p class="description"><a href="<%= @candidato.urllinkedin %>"> <%= @candidato.urllinkedin %></a></p>
         	<br/>
-        	<%= link_to "<i class='icon-home'show></i>Home".html_safe ,'/posts', class: "btn btn-sm btn-info" %>
+        	<%= link_to "<i class='fa fa-home'show></i>Home".html_safe ,'/posts', class: "btn btn-sm btn-info" %>
 				
 	</div>
 </section>

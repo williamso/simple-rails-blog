@@ -12,7 +12,7 @@
 			  <!-- Msg Erros --> 
 			  <% if @candidato.errors.any? %>
 			    <div class="alert alert-danger">
-			      <h4><%= pluralize(@candidato.errors.count, "error") %> prohibited this post from being saved:</h4>
+			      <h4><%= pluralize(@candidato.errors.count, "error") %></h4>
 
 			      <ul>
 			      <% @candidato.errors.full_messages.each do |msg| %>
@@ -48,10 +48,10 @@
 			  <div class="form-group">
 			    <div class="col-lg-9 col-lg-offset-3">
 			      <%= button_tag( :class => "btn btn-primary") do %>
-			         <i class='icon-plus'show></i>Enviar
+			         <i class='fa fa-plus'show></i> Enviar
 			      <% end %>
-			      <%= link_to "<i class='icon-home'show></i>Home".html_safe ,'/posts', class: "btn btn-info" %>
-			      <%= link_to "<i class='icon-remove'show></i>Cancelar".html_safe, posts_path ,class: "btn" %>
+			      <%= link_to "<i class='fa fa-home'></i> Home".html_safe ,'/posts', class: "btn btn-info" %>
+			      <%= link_to "<i class='fa fa-times'></i> Cancelar".html_safe, posts_path ,class: "btn" %>
 			    </div>
 			  </div><div class="form-group">
 			    <div class="col-lg-9 col-lg-offset-3">

@@ -12,8 +12,9 @@
 			<!--<p id="notice"><%= notice %></p>-->
 			<% who_is = 'edit'%>
 			<div class="alert alert-success">
-        		<h4 class="m-b" style="color: #fff; text-rendering: optimizeLegibility;">Sua oportunidade foi enviada para nosso Adminstrador, para aprovação. Em até 20 minutos ela estará no ar. </h3>
-        		<h4 class="m-b" style="color: #fff; text-rendering: optimizeLegibility;"> Para remover ou editar posteriormente envie um e-mail para o Administrador (admin@hunterco.com.br), com o ID - <%=@post.id%> com a sua solicitação.</h4>
+        		<h4>Sua oportunidade foi enviada para nosso Administrador para aprovação.</h4>
+				<h4> Em até 20 minutos ela estará no ar. </h4>
+				<h4> Para remover ou editar, envie um e-mail para admin@hunterco.com.br com ID  <%=@post.id%> e informe qual sua solicitação.</h4>
         	</div>
         <% else %>
         	<% who_is = 'show'%>

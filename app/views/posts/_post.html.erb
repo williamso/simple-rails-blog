@@ -17,16 +17,16 @@
 	<p>
 		<% case who_is %>
 			<% when 'edit'%>
-				<%= link_to "<i class='icon-plus'show></i>Nova Oportunidade".html_safe ,post, class: "btn btn-sm btn-primary" %>
-				<%= link_to "<i class='icon-home'show></i>Home".html_safe ,'/posts', class: "btn btn-sm btn-info" %>
-				<%= link_to "<i class='icon-edit'show></i>Editar".html_safe ,edit_post_path(post), class: "btn btn-sm" %>
-				<%= link_to "<i class='icon-remove'show></i>Excluir".html_safe , post, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn btn-sm" %>
+				<%= link_to "<i class='fa fa-plus'></i> Nova Oportunidade".html_safe ,post, class: "btn btn-sm btn-primary" %>
+				<%= link_to "<i class='fa fa-home'></i> Home".html_safe ,'/posts', class: "btn btn-sm btn-info" %>
+				<%= link_to "<i class='fa fa-edit'></i> Editar".html_safe ,edit_post_path(post), class: "btn btn-sm" %>
+				<%= link_to "<i class='fa fa-trash-o'></i> Excluir".html_safe , post, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn btn-sm" %>
 			<% when 'show' %>
-				<%= link_to "<i class='icon-screenshot'show></i>Candidatar-se!".html_safe ,candidatos_path(post), class: "btn btn-sm btn-primary" %>
-				<%= link_to "<i class='icon-home'show></i>Home".html_safe ,'/posts', class: "btn btn-sm btn-info" %>
+				<%= link_to "<i class='fa fa-thumbs-o-up'></i> Candidatar-se!".html_safe ,candidatos_path(post), class: "btn btn-sm btn-primary" %>
+				<%= link_to "<i class='fa fa-home'></i> Home".html_safe ,'/posts', class: "btn btn-sm btn-info" %>
 				<span class='st_sharethis' displayText='Compartilhe!'></span>
 			<% when 'list' %>
-				<%= link_to "<i class='icon-screenshot'show></i>Candidatar-se!".html_safe ,candidatos_path(post), class: "btn btn-sm btn-info" %>
+				<%= link_to "<i class='fa fa-thumbs-o-up'></i> Candidatar-se!".html_safe ,candidatos_path(post), class: "btn btn-sm btn-info" %>
 				<span class='st_sharethis' displayText='Compartilhe!'></span>
 		<% end %>	
 	</p>
